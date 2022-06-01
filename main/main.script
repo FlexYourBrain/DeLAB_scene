@@ -1,0 +1,56 @@
+local cam = "main:/camera"; local cam_speed = 2; local tl_rot = vmath.vector3(-4,-30,0); local tr_rot = vmath.vector3(-4,30,0); local easy = go.EASING_INOUTCUBIC
+local fpos = vmath.vector3(0,0,20); local bpos = vmath.vector3(0,1,51); local tlp = vmath.vector3(-10,0,20); local trp = vmath.vector3(10,0,20)
+local tpos1 = vmath.vector3(-35,18,67); local tpos2 = vmath.vector3(0,18,67); local tpos3 = vmath.vector3(35,18,67); local tpos4 = vmath.vector3(-20,2,8); local tpos5 = vmath.vector3(20,2,8)
+local rot_default = vmath.vector3(-2,0,0); local rot_one = vmath.vector3(-16,-29,0); local rot_two = vmath.vector3(-16,0,0); local rot_three = vmath.vector3(-16,29,0)
+local prop_left = "/Material_prop_left#model" ; local color_change = vmath.vector4(0.1,0.8,0.6,1.0)
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	msg.post("@render:", "use_camera_projection")
+	msg.post("camera", "acquire_camera_focus")
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0.075, 0.075, 0.085, 0.0)} )
+	
+	go.animate(prop_left, "colorMe", go.PLAYBACK_LOOP_PINGPONG, color_change, go.EASING_INOUTSINE, 8.0)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("space") and action.pressed then
+		msg.post("@render:", "posteffect")
+	end
+	if action_id == hash("forward") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, fpos, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_default, easy, cam_speed)
+	end
+	if action_id == hash("backward") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, bpos, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_default, easy, cam_speed)
+	end
+	if action_id == hash("tiltleft") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tlp, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, tl_rot, easy, cam_speed)
+	end
+	if action_id == hash("tiltright") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, trp, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, tr_rot, easy, cam_speed)
+	end
+	if action_id == hash("one") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tpos1, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_one, easy, cam_speed)
+	end
+	if action_id == hash("two") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tpos2, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_two, easy, cam_speed)
+	end
+	if action_id == hash("three") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tpos3, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_three, easy, cam_speed)
+	end
+	if action_id == hash("four") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tpos4, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_one, easy, cam_speed)
+	end
+	if action_id == hash("five") and action.pressed then
+		go.animate(cam, "position", go.PLAYBACK_ONCE_FORWARD, tpos5, easy, cam_speed)
+		go.animate(cam, "euler", go.PLAYBACK_ONCE_FORWARD, rot_three, easy, cam_speed)
+	end
+end

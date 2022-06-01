@@ -1,0 +1,44 @@
+key_trigger {
+  input: KEY_1
+  action: "one"
+}
+key_trigger {
+  input: KEY_2
+  action: "two"
+}
+key_trigger {
+  input: KEY_3
+  action: "three"
+}
+key_trigger {
+  input: KEY_W
+  action: "forward"
+}
+key_trigger {
+  input: KEY_S
+  action: "backward"
+}
+key_trigger {
+  input: KEY_A
+  action: "tiltleft"
+}
+key_trigger {
+  input: KEY_D
+  action: "tiltright"
+}
+key_trigger {
+  input: KEY_4
+  action: "four"
+}
+key_trigger {
+  input: KEY_5
+  action: "five"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "space"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "touch"
+}

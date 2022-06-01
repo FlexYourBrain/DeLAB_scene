@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
+    </contributor>
+    <created>2022-04-22T16:39:07</created>
+    <modified>2022-04-22T16:39:07</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="floor-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="floor-material" name="floor">
+      <instance_effect url="#floor-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Floor-mesh" name="Floor">
+      <mesh>
+        <source id="Floor-mesh-positions">
+          <float_array id="Floor-mesh-positions-array" count="60">-19.7601 -22.99426 0 19.7601 -22.99426 0 -19.7601 27.08528 28.58627 19.7601 27.08528 28.58627 -19.7601 22.99426 0 -19.7601 27.08528 4.091017 -19.7601 23.9046 0.1025701 -19.7601 24.76929 0.4051381 -19.7601 25.54497 0.892531 -19.7601 26.19275 1.54031 -19.7601 26.68014 2.315991 -19.7601 26.98271 3.18068 19.7601 27.08528 4.091017 19.7601 22.99426 0 19.7601 26.98271 3.18068 19.7601 26.68014 2.315991 19.7601 26.19275 1.54031 19.7601 25.54497 0.892531 19.7601 24.76929 0.4051381 19.7601 23.9046 0.1025701</float_array>
+          <technique_common>
+            <accessor source="#Floor-mesh-positions-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Floor-mesh-normals">
+          <float_array id="Floor-mesh-normals-array" count="54">0 -0.9984269 0.05606859 0 -1 0 0 -0.9984267 0.05607187 0 -0.9749277 0.222522 0 -0.9749277 0.2225223 0 -0.9009685 0.4338847 0 -0.9009686 0.4338844 0 -0.7818319 0.6234894 0 -0.7818316 0.6234897 0 -0.6234893 0.781832 0 -0.6234903 0.7818312 0 -0.4338846 0.9009686 0 -0.4338831 0.9009692 0 -0.2225215 0.9749279 0 -0.2225207 0.974928 0 -0.05607056 0.9984268 0 0 1 0 -0.05607038 0.9984269</float_array>
+          <technique_common>
+            <accessor source="#Floor-mesh-normals-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Floor-mesh-map-0">
+          <float_array id="Floor-mesh-map-0-array" count="108">1 0.5705348 0 1 0 0.5705348 0 0.5705348 1 0.5548393 1 0.5705348 0 0.5548393 1 0.5399309 1 0.5548393 0 0.5399308 1 0.5265571 1 0.5399309 0 0.5265571 1 0.4848989 1 0.5265571 0 0.4848989 1 0.4772942 1 0.4848989 0 0.4772942 1 0.4688169 1 0.4772942 0 0.4688168 1 0.459892 1 0.4688169 1 0 0 0.459892 0 0 1 0.5705348 1 1 0 1 0 0.5705348 0 0.5548393 1 0.5548393 0 0.5548393 0 0.5399308 1 0.5399309 0 0.5399308 0 0.5265571 1 0.5265571 0 0.5265571 0 0.4848989 1 0.4848989 0 0.4848989 0 0.4772942 1 0.4772942 0 0.4772942 0 0.4688168 1 0.4688169 0 0.4688168 0 0.459892 1 0.459892 1 0 1 0.459892 0 0.459892</float_array>
+          <technique_common>
+            <accessor source="#Floor-mesh-map-0-array" count="54" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Floor-mesh-vertices">
+          <input semantic="POSITION" source="#Floor-mesh-positions"/>
+        </vertices>
+        <triangles material="floor-material" count="18">
+          <input semantic="VERTEX" source="#Floor-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Floor-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Floor-mesh-map-0" offset="2" set="0"/>
+          <p>12 0 0 2 1 1 5 2 2 5 2 3 14 3 4 12 0 5 11 4 6 15 5 7 14 3 8 10 6 9 16 7 10 15 5 11 9 8 12 17 9 13 16 7 14 8 10 15 18 11 16 17 9 17 7 12 18 19 13 19 18 11 20 6 14 21 13 15 22 19 13 23 1 16 24 4 17 25 0 16 26 12 0 27 3 1 28 2 1 29 5 2 30 11 4 31 14 3 32 11 4 33 10 6 34 15 5 35 10 6 36 9 8 37 16 7 38 9 8 39 8 10 40 17 9 41 8 10 42 7 12 43 18 11 44 7 12 45 6 14 46 19 13 47 6 14 48 4 17 49 13 15 50 1 16 51 13 15 52 4 17 53</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Floor" name="Floor" type="NODE">
+        <matrix sid="transform">1 0 0 0.03430271 0 1 0 3.914722 0 0 1 -1.598927 0 0 0 1</matrix>
+        <instance_geometry url="#Floor-mesh" name="Floor">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="floor-material" target="#floor-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

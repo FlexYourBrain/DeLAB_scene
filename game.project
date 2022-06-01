@@ -1,0 +1,68 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /main/render/test.renderc
+
+[display]
+width = 1280
+height = 1020
+samples = 2
+update_frequency = 60
+vsync = 0
+
+[android]
+input_method = HiddenInputField
+package = com.defold.example.basic3d
+
+[project]
+dependencies = 
+title = DeLAB Scene
+version = 0.01
+developer = Agustin R.
+
+[osx]
+bundle_identifier = com.defold.example.basic3d
+
+[ios]
+bundle_identifier = com.defold.example.basic3d
+
+[graphics]
+max_draw_calls = 128
+
+[resource]
+max_resources = 512
+
+[collection]
+max_instances = 512
+
+[spine]
+max_count = 1
+
+[label]
+subpixels = 0
+
+[particle_fx]
+max_particle_count = 512
+
+[tilemap]
+max_count = 1
+max_tile_count = 1
+
+[iap]
+auto_finish_transactions = 0
+
+[html5]
+show_fullscreen_button = 0
+scale_mode = stretch
+show_console_banner = 0
+show_made_with_defold = 0
+cssfile = /builtins/manifests/web/dark_theme.css
+
+[native_extension]
+app_manifest = /input.appmanifest
+
+[input]
+use_accelerometer = 0
+
+[sprite]
+subpixels = 1
+

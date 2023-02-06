@@ -66,3 +66,6 @@ use_accelerometer = 0
 [sprite]
 subpixels = 1
 
+[script]
+shared_state = 1
+

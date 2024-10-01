@@ -57,9 +57,6 @@ show_console_banner = 0
 show_made_with_defold = 0
 cssfile = /builtins/manifests/web/dark_theme.css
 
-[native_extension]
-app_manifest = /input.appmanifest
-
 [input]
 use_accelerometer = 0
 
